@@ -1,0 +1,68 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* ---------------- LOADER ---------------- */
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #0b39ff; /* blue */
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-div {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  gap: 9vw;
+  transform-origin: center center;
+}
+
+.box img {
+  width: 10vw;
+  aspect-ratio: 1 / 1;
+  display: block;
+}
+
+/* ---------------- MAIN ---------------- */
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ff1f1f; /* red */
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Keep hero img in the page, but hidden until handoff */
+.hero-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transform-origin: center center;
+  display: block;
+}
+
+/* Hide main content until loader is done */
+.page-content {
+  opacity: 0;
+  transform: translateY(60px);
+  padding: 48px;
+}
+
+h1 { margin: 0 0 16px; }

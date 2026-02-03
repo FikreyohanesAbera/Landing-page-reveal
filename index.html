@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loader to Hero</title>
+    <link rel="stylesheet" href="index.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    <script defer src="index.js"></script>
+</head>
+
+<body>
+    <!-- LOADER OVERLAY -->
+    <section class="loader">
+        <div class="wrapper">
+            <div class="img-div">
+                <div class="box"><img src="preloader3-scaled.jpg" alt=""></div>
+                <div class="box"><img src="preloader3-scaled.jpg" alt=""></div>
+
+                <!-- MIDDLE ONE (reference for handoff) -->
+                <div class="box is-center">
+                    <img class="loader-center" src="preloader3-scaled.jpg" alt="">
+                </div>
+
+                <div class="box"><img src="preloader3-scaled.jpg" alt=""></div>
+                <div class="box"><img src="preloader3-scaled.jpg" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN PAGE (ALREADY EXISTS UNDER LOADER) -->
+    <main class="page">
+        <section class="hero">
+            <!-- The hero image that will be revealed at handoff -->
+            <img class="hero-img" src="preloader3-scaled.jpg" alt="">
+            <div class="page-content">
+                <h1>Landing page content</h1>
+                <p>Scroll down after loader finishes. Hero should scroll away normally.</p>
+                <div style="height: 150vh;"></div>
+                <h2>More content...</h2>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
