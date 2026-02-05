@@ -1,0 +1,32 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.scroller {
+  height: 100vh;          /* so pinning has a correct viewport-sized scene */
+  overflow: hidden;       /* hides panels while we translate */
+  position: relative;
+}
+
+.panels {
+  height: 100%;
+  will-change: transform;
+}
+
+.panel {
+  height: 100vh;          /* IMPORTANT: each panel must be a full viewport step */
+  display: grid;
+  place-items: center;
+  font-size: 48px;
+  font-family: system-ui;
+}
+
+/* just so you can see it */
+.p1 { background: #111; color: #fff; }
+.p2 { background: #1e3a8a; color: #fff; }
+.p3 { background: #065f46; color: #fff; }
+.p4 { background: #7c2d12; color: #fff; }
+
+.scroller { height: 100vh; overflow: hidden; }
+.panel { height: 100vh; }
