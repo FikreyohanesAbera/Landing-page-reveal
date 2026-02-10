@@ -1,0 +1,78 @@
+/* --- Base overlay --- */
+.smokeOverlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 9999;
+}
+
+/* soft dark wash to hide the page during transition */
+.smokeOverlay__wash {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 8, 6, 0.55);
+}
+
+/* the actual smoke texture (use your smoke png or svg here) */
+.smokeOverlay__layer {
+  position: absolute;
+  inset: -20%;
+  background-image: url("./smoke.png"); /* <-- replace with your asset */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: blur(0.5px);
+  transform: scale(1.05);
+  opacity: 0.0;
+}
+
+/* --- COVER animation (page -> smoke) --- */
+.smoke--cover {
+  opacity: 1;
+  animation: smokeCover 0.55s ease forwards;
+}
+.smoke--cover .smokeOverlay__layer {
+  animation: smokeLayerIn 0.55s ease forwards;
+}
+
+/* --- REVEAL animation (smoke -> page) --- */
+.smoke--reveal {
+  opacity: 1;
+  animation: smokeReveal 0.55s ease forwards;
+}
+.smoke--reveal .smokeOverlay__layer {
+  animation: smokeLayerOut 0.55s ease forwards;
+}
+
+@keyframes smokeCover {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes smokeReveal {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes smokeLayerIn {
+  0% {
+    opacity: 0;
+    transform: scale(1.15) translateY(20px);
+  }
+  100% {
+    opacity: 0.95;
+    transform: scale(1.05) translateY(0px);
+  }
+}
+
+@keyframes smokeLayerOut {
+  0% {
+    opacity: 0.95;
+    transform: scale(1.05) translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.15) translateY(-20px);
+  }
+}
