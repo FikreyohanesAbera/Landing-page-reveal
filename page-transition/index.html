@@ -115,15 +115,15 @@
         scrollTrigger: {
             trigger: ".wrap",      // The container that triggers the animation
             start: "top 30%  ",      // Starts when the box is in the middle
-            markers: true ,
-            onEnter: () => tl.play(),         // Set to true to see the start/end lines for debugging
+            end: "50% 50%",       // Ends when the top of .wrap hits 20% of the viewport
+            scrub: 1.5,            // Smoothly links animation to scroll (1.5s delay for "catch up")
+            markers: true         // Set to true to see the start/end lines for debugging
         }
     });
 
     // Animate the radius of both circles (Normal and Inverted)
     tl.to(".smoke-logic", {
-        attr: { r: 400 },  
-        duration: 4, 
+        attr: { r: 400 },   
         ease: "none"               // "none" is usually best for scroll-scrubbed animations
     });
 
